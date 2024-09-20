@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Content</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .approved {
+            background-color: #ccffcc;
+            /* Light Green */
+        }
+    </style>
+</head>
+
+<body class="mb-5">
+
+    <!--Main Navigation-->
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-4">
+                    <a href="index.html" class="list-group-item list-group-item-action py-2" data-mdb-ripple-init
+                        aria-current="true">
+                        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+                    </a>
+                    <div class="dropdown">
+                        <a href="user.html" class="list-group-item list-group-item-action py-2 " id="dropdownMenuLink1"
+                            data-mdb-dropdown-init data-mdb-ripple-init>
+                            <i class="fas fa-chart-area fa-users me-3"></i><span>Users </span>
+                        </a>
+                        <ul class="dropdown-menu bg-beige" aria-labelledby="dropdownMenuLink1">
+                            <li><a class="dropdown-item" href="user.html">Adding User Account</a></li>
+                            <li><a class="dropdown-item" href="user.html">Editing User Account</a></li>
+                            <li><a class="dropdown-item" href="user.html">Removing User Account</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="content.html" class="list-group-item list-group-item-action py-2 active"
+                            id="dropdownMenuLink2" data-mdb-dropdown-init data-mdb-ripple-init aria-expanded="false"><i
+                                class="fas fa-book-open-reader me-3"></i><span>Content</span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+                            <li><a class="dropdown-item" href="#contentManagement">Content Management</a></li>
+                            <li><a class="dropdown-item" href="#contentCategories">Content Categories</a></li>
+                            <li><a class="dropdown-item" href="#contentApproval">Content Approval</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="monetization.html" class="list-group-item list-group-item-action py-2"
+                            id="dropdownMenuLink3" data-mdb-dropdown-init data-mdb-ripple-init aria-expanded="false"><i
+                                class="fas fa-filter-circle-dollar me-3"></i><span>Monetization</span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+                            <li><a class="dropdown-item" href="monetization.html">Subscription Plans</a></li>
+                            <li><a class="dropdown-item" href="monetization.html">Advertisements</a></li>
+                            <li><a class="dropdown-item" href="monetization.html">Premium Content</a></li>
+                        </ul>
+                    </div>
+                    <a href="Setting.html" class="list-group-item list-group-item-action py-2" data-mdb-ripple-init><i
+                            class="fas fa-gear me-3"></i><span>Settings</span></a>
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-collapse-init data-mdb-target="#sidebarMenu"
+                    aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Brand -->
+                <a class="navbar-brand" href="#">
+                    <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="25" alt=""
+                        loading="lazy" />
+                </a>
+                <!-- Search form -->
+                <form class="d-none d-md-flex input-group w-auto my-auto">
+                    <input autocomplete="off" type="search" class="form-control rounded"
+                        placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px" />
+                    <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                </form>
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <!-- Notification dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-dropdown-init aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Some news</a></li>
+                            <li><a class="dropdown-item" href="#">Another news</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Icon -->
+                    <li class="nav-item">
+                        <a class="nav-link me-3 me-lg-0" href="#">
+                            <i class="fas fa-fill-drip"></i>
+                        </a>
+                    </li>
+                    <!-- Icon -->
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+
+                    <!-- Icon dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown"
+                            role="button" data-mdb-dropdown-init aria-expanded="false">
+                            <i class="united kingdom flag m-0"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="united kingdom flag"></i>English
+                                    <i class="fa fa-check text-success ms-2"></i></a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="poland flag"></i>Polski</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="china flag"></i>中文</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="japan flag"></i>日本語</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="germany flag"></i>Deutsch</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="france flag"></i>Français</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="spain flag"></i>Español</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="russia flag"></i>Русский</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="portugal flag"></i>Português</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Avatar -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-dropdown-init aria-expanded="false">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle"
+                                height="22" alt="" loading="lazy" />
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">My profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+
+    </header>
+    <!-- Main Navigation -->
+
+    <!-- Main -->
+    <main class="mt-10 pt-3">
+        <div class="container">
+
+            <!-- Content Management -->
+            <section id="contentManagement">
+                <h2 class="mb-4">Content Management</h2>
+                <div class="row">
+
+                    <!-- Add Content -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Add New Content</h5>
+                                <p class="card-text">Add new stories, articles, or other content to the platform.</p>
+                                <button id="addContentBtn" class="btn btn-primary btn-block">Add Content</button>
+                                <!-- Add Content Modal -->
+                                <div class="modal fade" id="addContentModal" tabindex="-1"
+                                    aria-labelledby="addContentModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="addContentModalLabel">Add Content</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="title" class="form-label">Title</label>
+                                                        <input type="text" class="form-control" id="title">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="author" class="form-label">Author</label>
+                                                        <input type="text" class="form-control" id="author">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="narrator" class="form-label">Narrator</label>
+                                                        <input type="text" class="form-control" id="narrator">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="length" class="form-label">Length</label>
+                                                        <input type="text" class="form-control" id="length">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="description" class="form-label">Description</label>
+                                                        <textarea class="form-control" id="description"
+                                                            rows="3"></textarea>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="disclaimer" class="form-label">Disclaimer</label>
+                                                        <textarea class="form-control" id="disclaimer"
+                                                            rows="3"></textarea>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="link" class="form-label">Folder/link</label>
+                                                        <input type="browser" id="link" class="form-control">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="category" class="form-label">Card Category</label>
+                                                        <select class="form-select" id="category">
+                                                            <option selected>Select category...</option>
+                                                            <option value="romantic">Romantic</option>
+                                                            <option value="horror">Horror</option>
+                                                            <option value="comedy">Comedy</option>
+                                                            <option value="action">Action</option>
+                                                            <option value="adventure">Adventure</option>
+                                                        </select>
+                                                    </div>
+                                                    <hr>
+                                                    <h5>Add Chapter</h5>
+                                                    <div id="chapterList"></div>
+                                                    <div class="row chapter-form mb-3">
+                                                        <div class="col-md-3">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Chapter No">
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Chapter Name">
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Duration">
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <input type="file" class="form-control"
+                                                                placeholder="File Upload/Link">
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <button type="button"
+                                                                class="btn btn-danger delete-chapter">Delete</button>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-secondary"
+                                                        id="addChapterBtn">Add Chapter</button>
+                                                    <hr>
+                                                    <button type="submit" class="btn btn-primary">Submit For
+                                                        Approval</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Add Content Modal -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Content -->
+
+                    <!-- Edit Content -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Edit Content</h5>
+                                <p class="card-text">Edit existing stories, articles, or other content on the platform.
+                                </p>
+                                <button type="button" class="btn btn-primary btn-block" id="editContentBtn">
+                                    Edit Content
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="editContentModal" tabindex="-1"
+                                    aria-labelledby="editContentModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="editContentModalLabel">Edit Content</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Search movie name" aria-label="Search movie name"
+                                                        aria-describedby="searchBtn">
+                                                    <button class="btn btn-outline-secondary" type="button"
+                                                        id="searchBtn">Search</button>
+                                                </div>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">Golmaal</li>
+                                                    <li class="list-group-item">Don</li>
+                                                    <li class="list-group-item">Don 1</li>
+                                                    <li class="list-group-item">Jawan</li>
+                                                    <li class="list-group-item">Tiger</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of edit modal -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Edit Content -->
+
+                    <!-- Remove Content -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Remove Content</h5>
+                                <p class="card-text">Remove unwanted stories, articles, or other content from the
+                                    platform.</p>
+                                <button type="button" class="btn btn-primary btn-block" id="removeContentBtn">
+                                    Remove Content
+                                </button>
+                                <!-- Remove Form -->
+                                <div class="modal fade" id="removeContentModal" tabindex="-1"
+                                    aria-labelledby="removeContentModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="removeContentModalLabel">Remove Content</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Search movie name" aria-label="Search movie name"
+                                                        aria-describedby="searchBtn">
+                                                    <button class="btn btn-outline-secondary" type="button"
+                                                        id="searchBtn">Search</button>
+                                                </div>
+                                                <ul class="list-group">
+                                                    <li
+                                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                                        Golmaal
+                                                        <button class="btn btn-outline-danger removeBtn">Remove</button>
+                                                    </li>
+                                                    <li
+                                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                                        Don
+                                                        <button class="btn btn-outline-danger removeBtn">Remove</button>
+                                                    </li>
+                                                    <li
+                                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                                        Don 1
+                                                        <button class="btn btn-outline-danger removeBtn">Remove</button>
+                                                    </li>
+                                                    <li
+                                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                                        Jawan
+                                                        <button class="btn btn-outline-danger removeBtn">Remove</button>
+                                                    </li>
+                                                    <li
+                                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                                        Tiger
+                                                        <button class="btn btn-outline-danger removeBtn">Remove</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Remove Form -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Remove Content -->
+
+                </div>
+            </section>
+            <!-- Content Management -->
+
+            <!-- Content Categories -->
+            <div>
+                <section id="contentCategories" class="mt-5">
+                    <h2 class="mb-4">Content Categories</h2>
+                    <div class="container mt-5">
+                        <section id="contentCategories">
+                            <div class="accordion" id="contentCategoriesAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="romanticHeading">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#romanticCollapse" aria-expanded="true"
+                                            aria-controls="romanticCollapse">
+                                            Romantic
+                                        </button>
+                                    </h2>
+                                    <div id="romanticCollapse" class="accordion-collapse collapse"
+                                        aria-labelledby="romanticHeading" data-bs-parent="#contentCategoriesAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">Titanic</li>
+                                                <li class="list-group-item">The Notebook</li>
+                                                <li class="list-group-item">Pride and Prejudice</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="horrorHeading">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#horrorCollapse"
+                                            aria-expanded="false" aria-controls="horrorCollapse">
+                                            Horror
+                                        </button>
+                                    </h2>
+                                    <div id="horrorCollapse" class="accordion-collapse collapse"
+                                        aria-labelledby="horrorHeading" data-bs-parent="#contentCategoriesAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">The Exorcist</li>
+                                                <li class="list-group-item">Psycho</li>
+                                                <li class="list-group-item">The Shining</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="comedyHeading">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#comedyCollapse"
+                                            aria-expanded="false" aria-controls="comedyCollapse">
+                                            Comedy
+                                        </button>
+                                    </h2>
+                                    <div id="comedyCollapse" class="accordion-collapse collapse"
+                                        aria-labelledby="comedyHeading" data-bs-parent="#contentCategoriesAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">The Hangover</li>
+                                                <li class="list-group-item">Superbad</li>
+                                                <li class="list-group-item">Dumb and Dumber</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="actionHeading">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#actionCollapse"
+                                            aria-expanded="false" aria-controls="actionCollapse">
+                                            Action
+                                        </button>
+                                    </h2>
+                                    <div id="actionCollapse" class="accordion-collapse collapse"
+                                        aria-labelledby="actionHeading" data-bs-parent="#contentCategoriesAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">Die Hard</li>
+                                                <li class="list-group-item">The Matrix</li>
+                                                <li class="list-group-item">Mad Max: Fury Road</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="adventureHeading">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#adventureCollapse"
+                                            aria-expanded="false" aria-controls="adventureCollapse">
+                                            Adventure
+                                        </button>
+                                    </h2>
+                                    <div id="adventureCollapse" class="accordion-collapse collapse"
+                                        aria-labelledby="adventureHeading" data-bs-parent="#contentCategoriesAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">Indiana Jones series</li>
+                                                <li class="list-group-item">Jurassic Park</li>
+                                                <li class="list-group-item">The Lord of the Rings</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="dramaHeading">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dramaCollapse"
+                                            aria-expanded="false" aria-controls="dramaCollapse">
+                                            Drama
+                                        </button>
+                                    </h2>
+                                    <div id="dramaCollapse" class="accordion-collapse collapse"
+                                        aria-labelledby="dramaHeading" data-bs-parent="#contentCategoriesAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">Forrest Gump</li>
+                                                <li class="list-group-item">The Shawshank Redemption</li>
+                                                <li class="list-group-item">Schindler's List</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="thrillerHeading">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#thrillerCollapse"
+                                            aria-expanded="false" aria-controls="thrillerCollapse">
+                                            Thriller
+                                        </button>
+                                    </h2>
+                                    <div id="thrillerCollapse" class="accordion-collapse collapse"
+                                        aria-labelledby="thrillerHeading" data-bs-parent="#contentCategoriesAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">The Silence of the Lambs</li>
+                                                <li class="list-group-item">Seven</li>
+                                                <li class="list-group-item">Prisoners</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="knowledgeHeading">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#knowledgeCollapse"
+                                            aria-expanded="false" aria-controls="knowledgeCollapse">
+                                            Knowledge
+                                        </button>
+                                    </h2>
+                                    <div id="knowledgeCollapse" class="accordion-collapse collapse"
+                                        aria-labelledby="knowledgeHeading" data-bs-parent="#contentCategoriesAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">Documentaries</li>
+                                                <li class="list-group-item">TED Talks</li>
+                                                <li class="list-group-item">Educational Series</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+                <button id="addCategoryButton" class="btn btn-primary m-2" data-bs-toggle="modal"
+                    data-bs-target="#addCategoryModal">Add Category</button>
+                <!-- Category Modal -->
+                <div class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="addCategoryModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addCategoryModalLabel">Add New Category</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="newCategoryInput" class="form-label">Category Name</label>
+                                    <input type="text" class="form-control" id="newCategoryInput">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="addNewCategory()">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Content Categories -->
+
+            <!-- Content Approval -->
+            <section id="contentApproval" class="mt-5">
+                <h2 class="mb-4">Content Approval</h2>
+                <div class="container mt-5">
+                    <section id="contentApproval">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">Movie Name</div>
+                                            <div class="col">Submit Date</div>
+                                            <div class="col">Approval Date</div>
+                                            <div class="col">Action</div>
+                                            <div class="col">Status</div>
+                                        </div>
+                                        <hr>
+                                        <div class="row mb-1">
+                                            <div class="col">Movie 1</div>
+                                            <div class="col">2024-02-20</div>
+                                            <div class="col" id="approvalDate1"></div>
+                                            <div class="col"><button class="btn btn-primary"
+                                                    onclick="approveMovie(1)">Approve</button></div>
+                                            <div class="col" id="status1">Pending</div>
+                                        </div>
+                                        <div class="row mb-1">
+                                            <div class="col">Movie 2</div>
+                                            <div class="col">2024-02-20</div>
+                                            <div class="col" id="approvalDate2"></div>
+                                            <div class="col"><button class="btn btn-primary"
+                                                    onclick="approveMovie(2)">Approve</button></div>
+                                            <div class="col" id="status2">Pending</div>
+                                        </div>
+                                        <div class="row mb-1">
+                                            <div class="col">Movie 3</div>
+                                            <div class="col">2024-02-20</div>
+                                            <div class="col" id="approvalDate3"></div>
+                                            <div class="col"><button class="btn btn-primary"
+                                                    onclick="approveMovie(3)">Approve</button></div>
+                                            <div class="col" id="status3">Pending</div>
+                                        </div>
+                                        <div class="row mb-1">
+                                            <div class="col">Movie 4</div>
+                                            <div class="col">2024-02-20</div>
+                                            <div class="col" id="approvalDate4"></div>
+                                            <div class="col"><button class="btn btn-primary"
+                                                    onclick="approveMovie(4)">Approve</button></div>
+                                            <div class="col" id="status4">Pending</div>
+                                        </div>
+                                        <div class="row mb-1">
+                                            <div class="col">Movie 5</div>
+                                            <div class="col">2024-02-20</div>
+                                            <div class="col" id="approvalDate5"></div>
+                                            <div class="col"><button class="btn btn-primary"
+                                                    onclick="approveMovie(5)">Approve</button></div>
+                                            <div class="col" id="status5">Pending</div>
+                                        </div>
+                                        <div class="row mb-1">
+                                            <div class="col">Movie 6</div>
+                                            <div class="col">2024-02-20</div>
+                                            <div class="col" id="approvalDate6"></div>
+                                            <div class="col"><button class="btn btn-primary"
+                                                    onclick="approveMovie(6)">Approve</button></div>
+                                            <div class="col" id="status6">Pending</div>
+                                        </div>
+                                        <div class="row mb-1">
+                                            <div class="col">Movie 7</div>
+                                            <div class="col">2024-02-20</div>
+                                            <div class="col" id="approvalDate7"></div>
+                                            <div class="col"><button class="btn btn-primary"
+                                                    onclick="approveMovie(7)">Approve</button></div>
+                                            <div class="col" id="status7">Pending</div>
+                                        </div>
+                                        <div class="row mb-1">
+                                            <div class="col">Movie 8</div>
+                                            <div class="col">2024-02-20</div>
+                                            <div class="col" id="approvalDate8"></div>
+                                            <div class="col"><button class="btn btn-primary"
+                                                    onclick="approveMovie(8)">Approve</button></div>
+                                            <div class="col" id="status8">Pending</div>
+                                        </div>
+                                        <div class="row mb-1">
+                                            <div class="col">Movie 9</div>
+                                            <div class="col">2024-02-20</div>
+                                            <div class="col" id="approvalDate9"></div>
+                                            <div class="col"><button class="btn btn-primary"
+                                                    onclick="approveMovie(9)">Approve</button></div>
+                                            <div class="col" id="status9">Pending</div>
+                                        </div>
+                                        <div class="row mb-1">
+                                            <div class="col">Movie 10</div>
+                                            <div class="col">2024-02-20</div>
+                                            <div class="col" id="approvalDate10"></div>
+                                            <div class="col"><button class="btn btn-primary"
+                                                    onclick="approveMovie(10)">Approve</button></div>
+                                            <div class="col" id="status10">Pending</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </section>
+            <!-- Content Approval -->
+        </div>
+    </main>
+    <!-- Main -->
+    <div>
+        <script type="text/javascript" src="js/mdb.umd.min.js"></script>
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- Custom scripts -->
+        <!-- Bootstrap Bundle with Popper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    </div>
+
+    <script>
+        // JavaScript to show modal when button is clicked
+        document.getElementById('addContentBtn').addEventListener('click', function () {
+            var addContentModal = new bootstrap.Modal(document.getElementById('addContentModal'));
+            addContentModal.show();
+        });
+
+        // javascript to show model when edit content is clicked
+        document.getElementById('editContentBtn').addEventListener('click', function () {
+            var editContentModal = new bootstrap.Modal(document.getElementById('editContentModal'));
+            editContentModal.show();
+        });
+
+        // JavaScript to show modal when remove button is clicked
+        document.getElementById('removeContentBtn').addEventListener('click', function () {
+            var removeContentModal = new bootstrap.Modal(document.getElementById('removeContentModal'));
+            removeContentModal.show();
+        });
+
+        // JavaScript to handle remove button click
+        var removeButtons = document.querySelectorAll('.removeBtn');
+        removeButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                button.parentElement.remove();
+            });
+        });
+
+        //javaScript to handle Content Approval section
+        function approveMovie(movieId) {
+            var approvalDateId = 'approvalDate' + movieId;
+            var statusId = 'status' + movieId;
+            var currentDate = new Date().toLocaleString();
+            document.getElementById(approvalDateId).textContent = currentDate;
+            document.getElementById(statusId).textContent = 'Approved';
+            document.getElementById(statusId).classList.remove('pending');
+            document.getElementById(statusId).classList.add('approved');
+        }
+
+        //javaScript to handle add category button
+        function addNewCategory() {
+            var newCategoryName = document.getElementById('newCategoryInput').value;
+            if (newCategoryName.trim() === "") {
+                alert("Please enter a category name.");
+                return;
+            }
+            var accordion = document.getElementById('contentCategoriesAccordion');
+            var newCategoryHTML = `
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="${newCategoryName}Heading">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#${newCategoryName}Collapse" aria-expanded="false"
+                  aria-controls="${newCategoryName}Collapse">
+            ${newCategoryName}
+          </button>
+        </h2>
+        <div id="${newCategoryName}Collapse" class="accordion-collapse collapse"
+             aria-labelledby="${newCategoryName}Heading" data-bs-parent="#contentCategoriesAccordion">
+          <div class="accordion-body">
+            <ul class="list-group">
+              <!-- Add items here -->
+            </ul>
+          </div>
+        </div>
+      </div>`;
+            accordion.insertAdjacentHTML('beforeend', newCategoryHTML);
+            document.getElementById('newCategoryInput').value = ""; // Clear input field
+            $('#addCategoryModal').modal('hide'); // Hide modal after adding category
+        }
+
+        //javascript for add chapter feature
+        document.addEventListener('DOMContentLoaded', function () {
+            const addChapterBtn = document.getElementById('addChapterBtn');
+            const chapterList = document.getElementById('chapterList');
+            const chapterForm = document.querySelector('.chapter-form');
+
+            addChapterBtn.addEventListener('click', function () {
+                const newChapterForm = chapterForm.cloneNode(true);
+                newChapterForm.classList.remove('mb-3');
+                newChapterForm.classList.add('mt-3');
+                newChapterForm.querySelector('button.delete-chapter').addEventListener('click', function () {
+                    newChapterForm.remove();
+                });
+                chapterList.appendChild(newChapterForm);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

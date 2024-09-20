@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Monetization</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-4">
+                    <a href="index.html" class="list-group-item list-group-item-action py-2" data-mdb-ripple-init
+                        aria-current="true">
+                        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+                    </a>
+                    <div class="dropdown">
+                        <a href="user.html" class="list-group-item list-group-item-action py-2 " id="dropdownMenuLink1"
+                            data-mdb-dropdown-init data-mdb-ripple-init>
+                            <i class="fas fa-chart-area fa-users me-3"></i><span>Users </span>
+                        </a>
+                        <ul class="dropdown-menu bg-beige" aria-labelledby="dropdownMenuLink1">
+                            <li><a class="dropdown-item" href="user.html">Adding User Account</a></li>
+                            <li><a class="dropdown-item" href="user.html">Editing User Account</a></li>
+                            <li><a class="dropdown-item" href="user.html">Removing User Account</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="content.html" class="list-group-item list-group-item-action py-2"
+                            id="dropdownMenuLink2" data-mdb-dropdown-init data-mdb-ripple-init aria-expanded="false"><i
+                                class="fas fa-book-open-reader me-3"></i><span>Content</span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+                            <li><a class="dropdown-item" href="content.html">Content Management</a></li>
+                            <li><a class="dropdown-item" href="content.html">Content Categories</a></li>
+                            <li><a class="dropdown-item" href="content.html">Content Approval</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="monetization.html" class="list-group-item list-group-item-action py-2 active"
+                            id="dropdownMenuLink3" data-mdb-dropdown-init data-mdb-ripple-init aria-expanded="false"><i
+                                class="fas fa-filter-circle-dollar me-3"></i><span>Monetization</span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+                            <li><a class="dropdown-item" href="#Subcription">Subscription Plans</a></li>
+                            <li><a class="dropdown-item" href="#Advertisement">Advertisements</a></li>
+                            <li><a class="dropdown-item" href="#Premium">Premium Content</a></li>
+                            <li><a class="dropdown-item" href="#coupon">Coupon Code</a></li>
+                        </ul>
+                    </div>
+                    <a href="Setting.html" class="list-group-item list-group-item-action py-2" data-mdb-ripple-init><i
+                            class="fas fa-gear me-3"></i><span>Settings</span></a>
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-collapse-init data-mdb-target="#sidebarMenu"
+                    aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Brand -->
+                <a class="navbar-brand" href="#">
+                    <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="25" alt=""
+                        loading="lazy" />
+                </a>
+                <!-- Search form -->
+                <form class="d-none d-md-flex input-group w-auto my-auto">
+                    <input autocomplete="off" type="search" class="form-control rounded"
+                        placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px" />
+                    <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                </form>
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <!-- Notification dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-dropdown-init aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Some news</a></li>
+                            <li><a class="dropdown-item" href="#">Another news</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Icon -->
+                    <li class="nav-item">
+                        <a class="nav-link me-3 me-lg-0" href="#">
+                            <i class="fas fa-fill-drip"></i>
+                        </a>
+                    </li>
+                    <!-- Icon -->
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+
+                    <!-- Icon dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown"
+                            role="button" data-mdb-dropdown-init aria-expanded="false">
+                            <i class="united kingdom flag m-0"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="united kingdom flag"></i>English
+                                    <i class="fa fa-check text-success ms-2"></i></a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="poland flag"></i>Polski</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="china flag"></i>中文</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="japan flag"></i>日本語</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="germany flag"></i>Deutsch</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="france flag"></i>Français</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="spain flag"></i>Español</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="russia flag"></i>Русский</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="portugal flag"></i>Português</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Avatar -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-dropdown-init aria-expanded="false">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle"
+                                height="22" alt="" loading="lazy" />
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">My profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+
+    </header>
+
+    <main style="margin-top: 58px">
+        <!--  start: Subscription Plan Section -->
+        <div class="container border shadow-lg p-3 mb-5 bg-body rounded" id="Subcription">
+            <!-- Subscription -->
+            <div class="col-md-4 w-auto">
+                <h1 style="text-align: center;">Subscription Plans</h1>
+
+                <!-- Subscription table -->
+                <table class="table">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search by Username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="filterSelect">Filter By:</label>
+                        <select class="form-control" id="filterSelect">
+                            <option value="">-- Select Filter --</option>
+                            <option value="subscriptionType">Subscription Type</option>
+                            <option value="payment">Payment</option>
+                            <option value="usernameAsc">Username A-Z</option>
+                            <option value="usernameDesc">Username Z-A</option>
+                        </select>
+                    </div>
+
+                    <thead>
+
+                        <tr>
+                            <th>Username</th>
+                            <th>Subscription Type</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Payment</th>
+                            <th>Subscription Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subscriptionTableBody">
+                        <tr>
+                            <td>User1</td>
+                            <td>Monthly</td>
+                            <td>2024-01-01</td>
+                            <td>2024-02-01</td>
+                            <td>$10</td>
+                            <td>Active</td>
+                            <td><button class="btn btn-danger removeBtn">Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>User2</td>
+                            <td>Yearly</td>
+                            <td>2024-01-15</td>
+                            <td>2025-01-15</td>
+                            <td>$100</td>
+                            <td>Active</td>
+                            <td><button class="btn btn-danger removeBtn">Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>User3</td>
+                            <td>Monthly</td>
+                            <td>2024-02-01</td>
+                            <td>2024-03-01</td>
+                            <td>$10</td>
+                            <td>Active</td>
+                            <td><button class="btn btn-danger removeBtn">Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>User4</td>
+                            <td>Yearly</td>
+                            <td>2024-02-10</td>
+                            <td>2025-02-10</td>
+                            <td>$100</td>
+                            <td>Active</td>
+                            <td><button class="btn btn-danger removeBtn">Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>User5</td>
+                            <td>Monthly</td>
+                            <td>2024-02-15</td>
+                            <td>2024-03-15</td>
+                            <td>$10</td>
+                            <td>Active</td>
+                            <td><button class="btn btn-danger removeBtn">Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>User6</td>
+                            <td>Yearly</td>
+                            <td>2024-03-01</td>
+                            <td>2025-03-01</td>
+                            <td>$100</td>
+                            <td>Active</td>
+                            <td><button class="btn btn-danger removeBtn">Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>User7</td>
+                            <td>Monthly</td>
+                            <td>2024-03-15</td>
+                            <td>2024-04-15</td>
+                            <td>$10</td>
+                            <td>Active</td>
+                            <td><button class="btn btn-danger removeBtn">Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>User8</td>
+                            <td>Yearly</td>
+                            <td>2024-04-01</td>
+                            <td>2025-04-01</td>
+                            <td>$100</td>
+                            <td>Active</td>
+                            <td><button class="btn btn-danger removeBtn">Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>User9</td>
+                            <td>Monthly</td>
+                            <td>2024-04-15</td>
+                            <td>2024-05-15</td>
+                            <td>$10</td>
+                            <td>Active</td>
+                            <td><button class="btn btn-danger removeBtn">Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>User10</td>
+                            <td>Yearly</td>
+                            <td>2024-05-01</td>
+                            <td>2025-05-01</td>
+                            <td>$100</td>
+                            <td>Active</td>
+                            <td><button class="btn btn-danger removeBtn">Cancel</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Subscription table -->
+
+                <!-- Subcription Table button -->
+                <button class="btn btn-primary mt-3" id="addSubscriptionBtn" data-toggle="modal"
+                    data-target="#addSubscriptionModal">Add New Subscription Plan</button>
+                <button class="btn btn-primary mt-3" id="addUserBtn" data-toggle="modal" data-target="#addUserModal">Add
+                    User</button>
+                <!-- Subcription Table button -->
+            </div>
+            <!-- Subscription -->
+
+            <!-- form for Add Subscription -->
+            <div class="modal fade" id="addSubscriptionModal" tabindex="-1" role="dialog"
+                aria-labelledby="addSubscriptionModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addSubscriptionModalLabel">Add New Subscription Plan</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addSubscriptionForm">
+                            <div class="form-group">
+                                <label for="subscriptionType">Subscription Type:</label>
+                                <input type="text" class="form-control" id="subscriptionType" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="validity">Validity:</label>
+                                <input type="text" class="form-control" id="validity" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cost">Cost:</label>
+                                <input type="text" class="form-control" id="cost" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- form for Add Subscription -->
+
+            <!-- form for Add User Account -->
+            <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addUserModalLabel">Add New User</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="addUserForm">
+                                <div class="form-group">
+                                    <label for="username">Username:</label>
+                                    <input type="text" class="form-control" id="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subscriptionType">Subscription Type:</label>
+                                    <input type="text" class="form-control" id="subscriptionType" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="startDate">Start Date:</label>
+                                    <input type="date" class="form-control" id="startDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="endDate">End Date:</label>
+                                    <input type="date" class="form-control" id="endDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment">Payment:</label>
+                                    <input type="text" class="form-control" id="payment" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- form for Add User Account -->
+
+        </div>
+        <!-- End: Subscription Plan Section -->
+
+        <!-- Start: Advertisement Section -->
+        <div class=" container border shadow-lg p-3 mb-5 bg-body rounded" id="Advertisement">
+            <div class="row-md-4">
+                <h3>Advertisements</h3>
+
+                <!-- Add details about ads here -->
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Validity</th>
+                                <th>App Time</th>
+                                <th>Payment</th>
+                                <th>Engagement</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="advertisementTableBody">
+                            <!-- Populate this section dynamically using JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Ads Details end here -->
+
+                <!-- Button of Ads Section -->
+                <div>
+                    <button class="btn btn-primary" id="newAdvertisementBtn" data-toggle="modal"
+                        data-target="#newAdvertisementModal">New Advertisement</button>
+                    <button class="btn btn-primary" id="advertisementListBtn" data-toggle="modal"
+                        data-target="#advertisementListModal">Advertisement List</button>
+                </div>
+                <!-- Button of Ads Section -->
+            </div>
+
+            <!-- New Advertisement Modal -->
+            <div class="modal fade" id="newAdvertisementModal" tabindex="-1" role="dialog"
+                aria-labelledby="newAdvertisementModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="newAdvertisementModalLabel">New Advertisement</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="addAdvertisementForm">
+                                <div class="form-group">
+                                    <label for="company">Company:</label>
+                                    <input type="text" class="form-control" id="company" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="validity">Validity:</label>
+                                    <input type="text" class="form-control" id="validity" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="appTime">App Time:</label>
+                                    <input type="text" class="form-control" id="appTime" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment">Payment:</label>
+                                    <input type="text" class="form-control" id="payment" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="engagement">Engagement:</label>
+                                    <input type="number" class="form-control" id="engagement" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- New Advertisement Modal -->
+
+            <!--  New Advertisement List Modal -->
+            <div class="modal fade" id="advertisementListModal" tabindex="-1" role="dialog"
+                aria-labelledby="advertisementListModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="advertisementListModalLabel">Advertisement List for Approval
+                            </h5>
+                            <button type="button" class="close btn btn-danger" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Company Name</th>
+                                        <th>Email</th>
+                                        <th>About Ad</th>
+                                        <th>Payment</th>
+                                        <th>Images</th>
+                                        <th>Duration</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="advertisementListTableBody">
+                                    <!-- Dynamically populate this section using JavaScript -->
+                                    <tr>
+                                        <td>Company A</td>
+                                        <td>companyA@example.com</td>
+                                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut odio
+                                            placerat.
+                                        </td>
+                                        <td>$150</td>
+                                        <td><img src="ad_image1.jpg" alt="Ad Image" style="max-width: 100px;"></td>
+                                        <td>30 days</td>
+                                        <td><button class="btn btn-success"
+                                                onclick="approveAdvertisement(0)">Approve</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Company B</td>
+                                        <td>companyB@example.com</td>
+                                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut odio
+                                            placerat.
+                                        </td>
+                                        <td>$200</td>
+                                        <td><img src="ad_image2.jpg" alt="Ad Image" style="width: auto;"></td>
+                                        <td>45 days</td>
+                                        <td><button class="btn btn-success"
+                                                onclick="approveAdvertisement(1)">Approve</button></td>
+                                    </tr>
+                                    <!-- Add more advertisement entries here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  new Advertisement List Modal -->
+
+        </div>
+        <!-- End: Advertisement Section -->
+
+        <!-- Start:  Premium Content Section -->
+        <div class="container border shadow-lg p-3 mb-5 bg-body rounded" id="Premium">
+            <h3>Premium Content</h3>
+
+            <!-- Form to add premium content -->
+            <form>
+                <form>
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="author" class="form-label">Author</label>
+                        <input type="text" class="form-control" id="author">
+                    </div>
+                    <div class="mb-3">
+                        <label for="narrator" class="form-label">Narrator</label>
+                        <input type="text" class="form-control" id="narrator">
+                    </div>
+                    <div class="mb-3">
+                        <label for="length" class="form-label">Length</label>
+                        <input type="text" class="form-control" id="length">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="disclaimer" class="form-label">Disclaimer</label>
+                        <textarea class="form-control" id="disclaimer" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="link" class="form-label">Folder/link</label>
+                        <input type="browser" id="link" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Card Category</label>
+                        <select class="form-select" id="category">
+                            <option selected>Select category...</option>
+                            <option value="romantic">Romantic</option>
+                            <option value="horror">Horror</option>
+                            <option value="comedy">Comedy</option>
+                            <option value="action">Action</option>
+                            <option value="adventure">Adventure</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <h5>Add Chapter</h5>
+                    <div id="chapterList"></div>
+                    <div class="row chapter-form mb-3">
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="Chapter No">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="Chapter Name">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="Duration">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="file" class="form-control" placeholder="File Upload/Link">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger delete-chapter">Delete</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary" id="addChapterBtn">Add Chapter</button>
+                    <hr>
+                </form>
+                <button type="submit" class="btn btn-primary">Add Premium Content</button>
+            </form>
+            <!-- Form to add premium content -->
+
+        </div>
+        <!-- End:  Premium Content Section -->
+
+        <!-- Start: Coupon code section -->
+        <div class="container border shadow-lg p-3 mb-5 bg-body rounded" id="coupon">
+            <!-- Coupon Section -->
+            <div class="row-md-4">
+                <h3>Coupons Section</h3>
+
+                <!-- coupon table -->
+                <div class="table-responsive">
+                    <table class="table" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th>Coupon Code</th>
+                                <th>Influencer Name</th>
+                                <th>Validity</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Redemptions</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="couponTableBody">
+                            <!-- Populate this section dynamically using JavaScript -->
+                            <tr>
+                                <td>ABC123</td>
+                                <td>Influencer1</td>
+                                <td>30 days</td>
+                                <td>2024-02-01</td>
+                                <td>2024-03-01</td>
+                                <td>50</td>
+                                <td><button class="btn btn-danger" onclick="deleteCoupon(0)">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>DEF456</td>
+                                <td>Influencer2</td>
+                                <td>45 days</td>
+                                <td>2024-02-15</td>
+                                <td>2024-04-01</td>
+                                <td>30</td>
+                                <td><button class="btn btn-danger" onclick="deleteCoupon(1)">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>GHI789</td>
+                                <td>Influencer3</td>
+                                <td>60 days</td>
+                                <td>2024-03-01</td>
+                                <td>2024-05-01</td>
+                                <td>20</td>
+                                <td><button class="btn btn-danger" onclick="deleteCoupon(2)">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>JKL012</td>
+                                <td>Influencer4</td>
+                                <td>30 days</td>
+                                <td>2024-03-15</td>
+                                <td>2024-04-14</td>
+                                <td>15</td>
+                                <td><button class="btn btn-danger" onclick="deleteCoupon(3)">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>MNO345</td>
+                                <td>Influencer5</td>
+                                <td>45 days</td>
+                                <td>2024-04-01</td>
+                                <td>2024-05-16</td>
+                                <td>25</td>
+                                <td><button class="btn btn-danger" onclick="deleteCoupon(4)">Delete</button></td>
+                            </tr>
+                            <!-- Add more coupon entries here if needed -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- coupon table -->
+
+                <button class="btn btn-primary" id="addCouponBtn" data-toggle="modal" data-target="#addCouponModal">Add
+                    New Coupon</button>
+
+                <!-- Add new Coupon model -->
+                <div class="modal fade" id="addCouponModal" tabindex="-1" role="dialog"
+                    aria-labelledby="addCouponModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addCouponModalLabel">Add New Coupon</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="addCouponForm">
+                                    <div class="form-group">
+                                        <label for="couponCode">Coupon Code:</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="couponCode" readonly>
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">
+                                                    <input type="checkbox" id="autoGenerateCheckbox"> Auto Generate
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="influencerName">Influencer Name:</label>
+                                        <input type="text" class="form-control" id="influencerName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="validity">Validity:</label>
+                                        <input type="text" class="form-control" id="validity" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="startDate">Start Date:</label>
+                                        <input type="date" class="form-control" id="startDate" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="endDate">End Date:</label>
+                                        <input type="date" class="form-control" id="endDate" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Apply</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add new Coupon model -->
+            </div>
+        </div>
+        <!-- End: Coupon code section -->
+    </main>
+
+    <div>
+        <script type="text/javascript" src="js/mdb.umd.min.js"></script>
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>
+    <!-- Custom scripts -->
+    <script>
+        // for subcription table close button
+        var removeButtons = document.querySelectorAll('.removeBtn');
+        removeButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                button.parentElement.parentElement.remove();
+            });
+        });
+        // for subcription table close button
+
+        // JavaScript to handle add subscription button click
+        document.getElementById('addSubscriptionForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+            const subscriptionType = document.getElementById('subscriptionType').value;
+            const validity = document.getElementById('validity').value;
+            const cost = document.getElementById('cost').value;
+            alert("New plan successfully added: " + subscriptionType + " - Validity: " + validity + " - Cost: " + cost);
+            // Close the modal after submission
+            $('#addSubscriptionModal').modal('hide');
+        });
+        // JavaScript to handle add subscription button click
+
+        //JavaScript to handle add user button click
+        document.getElementById('addUserForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+            const username = document.getElementById('username').value;
+            const subscriptionType = document.getElementById('subscriptionType').value;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const payment = document.getElementById('payment').value;
+            // Here you can perform further processing, like adding the new user to your data model
+            // For demonstration, let's just add a new row to the table
+            const tableBody = document.getElementById('subscriptionTableBody');
+            const newRow = `
+      <tr>
+        <td>${username}</td>
+        <td>${subscriptionType}</td>
+        <td>${startDate}</td>
+        <td>${endDate}</td>
+        <td>${payment}</td>
+        <td>Active</td>
+        <td><button class="btn btn-danger removeBtn" onclick="cancelSubscription(this)">Cancel</button></td>
+      </tr>
+    `;
+            tableBody.innerHTML += newRow;
+            // Close the modal after submission
+            $('#addUserModal').modal('hide');
+        });
+        //JavaScript to handle add user button click
+
+
+        let advertisementData = [
+            { company: "Company1", validity: "30 days", appTime: "8 AM - 10 PM", payment: "$100", engagement: 500 },
+            { company: "Company2", validity: "30 days", appTime: "8 AM - 10 PM", payment: "$100", engagement: 500 },
+            { company: "Company3", validity: "30 days", appTime: "8 AM - 10 PM", payment: "$100", engagement: 500 },
+            { company: "Company4", validity: "30 days", appTime: "8 AM - 10 PM", payment: "$100", engagement: 500 },
+            { company: "Company5", validity: "30 days", appTime: "8 AM - 10 PM", payment: "$100", engagement: 500 },
+            // Add more advertisement data as needed
+        ];
+
+        // Function to populate the advertisement table
+        function populateAdvertisementTable(data) {
+            const tableBody = document.getElementById('advertisementTableBody');
+            tableBody.innerHTML = '';
+            data.forEach((ad, index) => {
+                const row = `
+        <tr>
+          <td>${ad.company}</td>
+          <td>${ad.validity}</td>
+          <td>${ad.appTime}</td>
+          <td>${ad.payment}</td>
+          <td>${ad.engagement}</td>
+          <td><button class="btn btn-danger" onclick="deleteAdvertisement(${index})">Delete</button></td>
+        </tr>
+      `;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        // Initial population of the advertisement table
+        populateAdvertisementTable(advertisementData);
+
+        // Function to delete advertisement
+        function deleteAdvertisement(index) {
+            const confirmDelete = confirm("Are you sure you want to delete this advertisement?");
+            if (confirmDelete) {
+                advertisementData.splice(index, 1); // Remove advertisement from advertisementData array
+                populateAdvertisementTable(advertisementData); // Repopulate table
+            }
+        }
+
+        // New Advertisement form submission functionality
+        document.getElementById('addAdvertisementForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+            const company = document.getElementById('company').value;
+            const validity = document.getElementById('validity').value;
+            const appTime = document.getElementById('appTime').value;
+            const payment = document.getElementById('payment').value;
+            const engagement = document.getElementById('engagement').value;
+            // Add the new advertisement to the advertisementData array
+            advertisementData.push({ company, validity, appTime, payment, engagement });
+            // Repopulate the table
+            populateAdvertisementTable(advertisementData);
+            // Close the modal after submission
+            $('#newAdvertisementModal').modal('hide');
+            // Optional: Reset the form fields
+            document.getElementById('addAdvertisementForm').reset();
+        });
+
+        // Function to fetch and display adver
+        // Function to approve advertisement
+        function approveAdvertisement(index) {
+            // Perform action to approve advertisement here (e.g., add to main advertisement list)
+            // For demonstration, let's just remove the entry from the advertisement list modal
+            const rowToRemove = document.getElementById('advertisementListTableBody').getElementsByTagName('tr')[index];
+            rowToRemove.remove();
+            // You can perform additional actions here, such as adding the advertisement to the main list
+        }
+
+        //JavaScript for premium Content Section
+        document.addEventListener('DOMContentLoaded', function () {
+            const addChapterBtn = document.getElementById('addChapterBtn');
+            const chapterList = document.getElementById('chapterList');
+            const chapterForm = document.querySelector('.chapter-form');
+
+            addChapterBtn.addEventListener('click', function () {
+                const newChapterForm = chapterForm.cloneNode(true);
+                newChapterForm.classList.remove('mb-3');
+                newChapterForm.classList.add('mt-3');
+                newChapterForm.querySelector('button.delete-chapter').addEventListener('click', function () {
+                    newChapterForm.remove();
+                });
+                chapterList.appendChild(newChapterForm);
+            });
+        });
+
+        //JavaScript for Coupon Section
+        let couponData = [
+            { code: "ABC123", influencer: "Influencer1", validity: "30 days", startDate: "2024-02-01", endDate: "2024-03-01", redemptions: 50 },
+            { code: "ABD124", influencer: "Influencer2", validity: "30 days", startDate: "2024-02-01", endDate: "2024-03-05", redemptions: 500 },
+            { code: "ABD125", influencer: "Influencer3", validity: "30 days", startDate: "2024-02-01", endDate: "2024-03-10", redemptions: 100 },
+            { code: "ABD126", influencer: "Influencer4", validity: "30 days", startDate: "2024-02-01", endDate: "2024-03-15", redemptions: 250 },
+            { code: "ABD127", influencer: "Influencer5", validity: "30 days", startDate: "2024-02-01", endDate: "2024-03-20", redemptions: 350 },
+            // Add more coupon data as needed
+        ];
+
+        // Function to populate the coupon table
+        function populateCouponTable(data) {
+            const tableBody = document.getElementById('couponTableBody');
+            tableBody.innerHTML = '';
+            data.forEach((coupon, index) => {
+                const row = `
+        <tr>
+          <td>${coupon.code}</td>
+          <td>${coupon.influencer}</td>
+          <td>${coupon.validity}</td>
+          <td>${coupon.startDate}</td>
+          <td>${coupon.endDate}</td>
+          <td>${coupon.redemptions}</td>
+          <td><button class="btn btn-danger" onclick="deleteCoupon(${index})">Delete</button></td>
+        </tr>
+      `;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        // Initial population of the coupon table
+        populateCouponTable(couponData);
+
+        // Function to delete coupon
+        function deleteCoupon(index) {
+            const confirmDelete = confirm("Are you sure you want to delete this coupon?");
+            if (confirmDelete) {
+                couponData.splice(index, 1); // Remove coupon from couponData array
+                populateCouponTable(couponData); // Repopulate table
+            }
+        }
+
+        // Function to generate a random alphanumeric string
+        function generateCouponCode(length) {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let couponCode = '';
+            for (let i = 0; i < length; i++) {
+                couponCode += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return couponCode;
+        }
+
+        // Function to handle form submission for adding a new coupon
+        document.getElementById('addCouponForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+            const couponCode = document.getElementById('couponCode').value.trim();
+            const influencerName = document.getElementById('influencerName').value;
+            const validity = document.getElementById('validity').value;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+
+            // Add the new coupon to the coupon table
+            const couponTableBody = document.getElementById('couponTableBody');
+            const newRow = `
+      <tr>
+        <td>${couponCode}</td>
+        <td>${influencerName}</td>
+        <td>${validity}</td>
+        <td>${startDate}</td>
+        <td>${endDate}</td>
+        <td>0</td>
+        <td><button class="btn btn-danger" onclick="deleteCoupon(this)">Delete</button></td>
+      </tr>
+    `;
+            couponTableBody.innerHTML += newRow;
+
+            // Close the modal after submission
+            $('#addCouponModal').modal('hide');
+
+            // Optional: Reset the form fields
+            document.getElementById('addCouponForm').reset();
+        });
+
+        // Function to handle auto-generate checkbox
+        document.getElementById('autoGenerateCheckbox').addEventListener('change', function () {
+            const couponCodeInput = document.getElementById('couponCode');
+            couponCodeInput.disabled = this.checked;
+            if (this.checked) {
+                couponCodeInput.value = generateCouponCode(6); // Adjust the length of the coupon code as needed
+            } else {
+                couponCodeInput.value = '';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

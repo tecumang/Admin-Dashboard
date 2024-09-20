@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Checking</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-p3anxfzjcycvC3z9GzCz4uhu98UdFxTucUwVsYevKeR+8a+WSqV9d+X5O8w6l/EI" crossorigin="anonymous">
+    <!-- Custom CSS -->
+</head>
+
+<body>
+
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-4">
+                    <a href="index.html" class="list-group-item list-group-item-action py-2" data-mdb-ripple-init
+                        aria-current="true">
+                        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+                    </a>
+                    <div class="dropdown">
+                        <a href="user.html" class="list-group-item list-group-item-action py-2 " id="dropdownMenuLink1"
+                            data-mdb-dropdown-init data-mdb-ripple-init>
+                            <i class="fas fa-chart-area fa-users me-3"></i><span>Users </span>
+                        </a>
+                        <ul class="dropdown-menu bg-beige" aria-labelledby="dropdownMenuLink1">
+                            <li><a class="dropdown-item" href="user.html">Adding User Account</a></li>
+                            <li><a class="dropdown-item" href="user.html">Editing User Account</a></li>
+                            <li><a class="dropdown-item" href="user.html">Removing User Account</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="content.html" class="list-group-item list-group-item-action py-2"
+                            id="dropdownMenuLink2" data-mdb-dropdown-init data-mdb-ripple-init aria-expanded="false"><i
+                                class="fas fa-book-open-reader me-3"></i><span>Content</span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+                            <li><a class="dropdown-item" href="content.html">Content Management</a></li>
+                            <li><a class="dropdown-item" href="content.html">Content Categories</a></li>
+                            <li><a class="dropdown-item" href="content.html">Content Approval</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="monetization.html" class="list-group-item list-group-item-action py-2"
+                            id="dropdownMenuLink3" data-mdb-dropdown-init data-mdb-ripple-init aria-expanded="false"><i
+                                class="fas fa-filter-circle-dollar me-3"></i><span>Monetization</span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+                            <li><a class="dropdown-item" href="monetization.html">Subscription Plans</a></li>
+                            <li><a class="dropdown-item" href="monetization.html">Advertisements</a></li>
+                            <li><a class="dropdown-item" href="monetization.html">Premium Content</a></li>
+                        </ul>
+                    </div>
+                    <a href="Setting.html" class="list-group-item list-group-item-action py-2 active" data-mdb-ripple-init><i
+                            class="fas fa-gear me-3"></i><span>Settings</span></a>
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-collapse-init data-mdb-target="#sidebarMenu"
+                    aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Brand -->
+                <a class="navbar-brand" href="#">
+                    <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="25" alt=""
+                        loading="lazy" />
+                </a>
+                <!-- Search form -->
+                <form class="d-none d-md-flex input-group w-auto my-auto">
+                    <input autocomplete="off" type="search" class="form-control rounded"
+                        placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px" />
+                    <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                </form>
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <!-- Notification dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-dropdown-init aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Some news</a></li>
+                            <li><a class="dropdown-item" href="#">Another news</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Icon -->
+                    <li class="nav-item">
+                        <a class="nav-link me-3 me-lg-0" href="#">
+                            <i class="fas fa-fill-drip"></i>
+                        </a>
+                    </li>
+                    <!-- Icon -->
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+
+                    <!-- Icon dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown"
+                            role="button" data-mdb-dropdown-init aria-expanded="false">
+                            <i class="united kingdom flag m-0"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="united kingdom flag"></i>English
+                                    <i class="fa fa-check text-success ms-2"></i></a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="poland flag"></i>Polski</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="china flag"></i>中文</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="japan flag"></i>日本語</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="germany flag"></i>Deutsch</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="france flag"></i>Français</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="spain flag"></i>Español</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="russia flag"></i>Русский</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="portugal flag"></i>Português</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Avatar -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-dropdown-init aria-expanded="false">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle"
+                                height="22" alt="" loading="lazy" />
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">My profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+
+    </header>
+
+    <main style="margin-top: 58px">
+        <div class="container">
+            <!-- Header -->
+            <header class="p-3 mb-2 border-bottom">
+                <h1>Admin Dashboard - Settings</h1>
+            </header>
+
+            <!-- Main Content -->
+            <!-- <main> -->
+            <div class="container border shadow-lg p-3 mb-5 bg-body rounded">
+                <div class="table-responsive col-md-4 w-auto">
+                    <table class="table">
+                        <tbody>
+                            <!-- General Settings -->
+                            <tr data-toggle="collapse" data-target="#general-settings-details" class="accordion-toggle">
+                                <td>General Settings</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="general-settings-details">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Application name, logo, and branding settings</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Language preferences</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Time zone configuration</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- User Management -->
+                            <tr data-toggle="collapse" data-target="#user-management-details" class="accordion-toggle">
+                                <td>User Management</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="user-management-details">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Add, edit, or delete users with different roles and
+                                                        permissions
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Reset passwords or manage authentication settings</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Enable or disable user registration</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Email Configuration -->
+                            <tr data-toggle="collapse" data-target="#email-configuration-details"
+                                class="accordion-toggle">
+                                <td>Email Configuration</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="email-configuration-details">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Configure SMTP settings for sending system emails</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Templates for email notifications (e.g., password reset,
+                                                        account
+                                                        activation)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Security Settings -->
+                            <tr data-toggle="collapse" data-target="#security-settings-details"
+                                class="accordion-toggle">
+                                <td>Security Settings</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="security-settings-details">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Enable two-factor authentication (2FA)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Manage API keys and access tokens</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Set up IP whitelisting or blacklisting</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Privacy and Compliance -->
+                            <tr data-toggle="collapse" data-target="#privacy-compliance-details"
+                                class="accordion-toggle">
+                                <td>Privacy and Compliance</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="privacy-compliance-details">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Consent management for user data processing</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Compliance settings for GDPR, CCPA, or other data protection
+                                                        regulations</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Billing and Payment -->
+                            <tr data-toggle="collapse" data-target="#billing-payment-details" class="accordion-toggle">
+                                <td>Billing and Payment</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="billing-payment-details">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Manage billing cycles, payment methods, and invoices</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>View subscription plans and user licenses</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Configure pricing tiers and discounts</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Notification Settings -->
+                            <tr data-toggle="collapse" data-target="#notification-settings-details"
+                                class="accordion-toggle">
+                                <td>Notification Settings</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="notification-settings-details">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Manage notification preferences for admin users</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Define triggers for system alerts and notifications</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Integration Settings -->
+                            <tr data-toggle="collapse" data-target="#integration-settings-details"
+                                class="accordion-toggle">
+                                <td>Integration Settings</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="integration-settings-details">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Configure integrations with third-party services (e.g., CRM,
+                                                        analytics)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>API settings for external access to application data</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Backup and Recovery -->
+                            <tr data-toggle="collapse" data-target="#backup-recovery-details" class="accordion-toggle">
+                                <td>Backup and Recovery</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="backup-recovery-details">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Schedule and manage database backups</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Restore data from backups in case of emergencies</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- System Logs and Monitoring -->
+                            <tr data-toggle="collapse" data-target="#system-logs-details" class="accordion-toggle">
+                                <td>System Logs and Monitoring</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="system-logs-details">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>View system logs for debugging and auditing purposes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Configure monitoring alerts for system performance metrics
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Customization Options -->
+                            <tr data-toggle="collapse" data-target="#customization-options-details"
+                                class="accordion-toggle">
+                                <td>Customization Options</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="customization-options-details">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Customize themes, colors, and layout preferences</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Upload custom CSS or JavaScript files for frontend
+                                                        customization
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Documentation and Help -->
+                            <tr data-toggle="collapse" data-target="#documentation-help-details"
+                                class="accordion-toggle">
+                                <td>Documentation and Help</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="documentation-help-details">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Access to documentation, FAQs, or user guides</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Support options for contacting customer service or technical
+                                                        support</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- </main> -->
+
+            <!-- Footer -->
+
+        </div>
+
+    </main>
+
+    <div>
+        <script type="text/javascript" src="js/mdb.umd.min.js"></script>
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>
+    <!-- Custom scripts -->
+    <script>
+
+    </script>
+
+</body>
+
+</html>

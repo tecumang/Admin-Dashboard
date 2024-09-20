@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>User Management</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Start your project here-->
+
+    <!--Main Navigation-->
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-4">
+                    <a href="index.html" class="list-group-item list-group-item-action py-2" data-mdb-ripple-init
+                        aria-current="true">
+                        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+                    </a>
+                    <div class="dropdown">
+                        <a href="#" class="list-group-item list-group-item-action py-2 active" id="dropdownMenuLink1"
+                            data-mdb-dropdown-init data-mdb-ripple-init>
+                            <i class="fas fa-chart-area fa-users me-3"></i><span>Users </span>
+                        </a>
+                        <ul class="dropdown-menu bg-beige" aria-labelledby="dropdownMenuLink1">
+                            <li><a class="dropdown-item" href="user.html">Adding User Account</a></li>
+                            <li><a class="dropdown-item" href="#editUsername">Editing User Account</a></li>
+                            <li><a class="dropdown-item" href="#removeuser">Removing User Account</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#" class="list-group-item list-group-item-action py-2" id="dropdownMenuLink2"
+                            data-mdb-dropdown-init data-mdb-ripple-init aria-expanded="false"><i
+                                class="fas fa-book-open-reader me-3"></i><span>Content</span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+                            <li><a class="dropdown-item" href="content.html">Content Management</a></li>
+                            <li><a class="dropdown-item" href="content.html">Content Categories</a></li>
+                            <li><a class="dropdown-item" href="content.html">Content Approval</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="monetization.html" class="list-group-item list-group-item-action py-2"
+                            id="dropdownMenuLink3" data-mdb-dropdown-init data-mdb-ripple-init aria-expanded="false"><i
+                                class="fas fa-filter-circle-dollar me-3"></i><span>Monetization</span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+                            <li><a class="dropdown-item" href="monetization.html">Subscription Plans</a></li>
+                            <li><a class="dropdown-item" href="monetization.html">Advertisements</a></li>
+                            <li><a class="dropdown-item" href="monetization.html">Premium Content</a></li>
+                        </ul>
+                    </div>
+                    <a href="Setting.html" class="list-group-item list-group-item-action py-2" data-mdb-ripple-init><i
+                            class="fas fa-gear me-3"></i><span>Settings</span></a>
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-collapse-init data-mdb-target="#sidebarMenu"
+                    aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Brand -->
+                <a class="navbar-brand" href="#">
+                    <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="25" alt=""
+                        loading="lazy" />
+                </a>
+                <!-- Search form -->
+                <form class="d-none d-md-flex input-group w-auto my-auto">
+                    <input autocomplete="off" type="search" class="form-control rounded"
+                        placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px" />
+                    <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                </form>
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <!-- Notification dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-dropdown-init aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Some news</a></li>
+                            <li><a class="dropdown-item" href="#">Another news</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Icon -->
+                    <li class="nav-item">
+                        <a class="nav-link me-3 me-lg-0" href="#">
+                            <i class="fas fa-fill-drip"></i>
+                        </a>
+                    </li>
+                    <!-- Icon -->
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+
+                    <!-- Icon dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown"
+                            role="button" data-mdb-dropdown-init aria-expanded="false">
+                            <i class="united kingdom flag m-0"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="united kingdom flag"></i>English
+                                    <i class="fa fa-check text-success ms-2"></i></a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="poland flag"></i>Polski</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="china flag"></i>中文</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="japan flag"></i>日本語</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="germany flag"></i>Deutsch</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="france flag"></i>Français</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="spain flag"></i>Español</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="russia flag"></i>Русский</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="portugal flag"></i>Português</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Avatar -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-dropdown-init aria-expanded="false">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle"
+                                height="22" alt="" loading="lazy" />
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">My profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+
+    </header>
+
+    <!-- main Section -->
+    <main style="margin-top: 58px">
+        <div class="container mt-5">
+            <h1 class="mb-4">User Management</h1>
+
+            <!-- Adding User Account -->
+            <!-- <section>
+                <h2 class="mb-3">Add User Account</h2>
+                <form>
+                    <div class="row mb-3">
+                        <label for="fullName" class="col-sm-2 col-form-label">Full Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="email" class="col-sm-2 col-form-label">Email address</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="password" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" placeholder="Enter password">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="Phone Number" class="col-sm-2 col-form-label">Mobile Number</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="phoneNumber"
+                                placeholder="Enter mobile number"><button type="button" class="btn btn-danger"
+                                onclick="sendOTP()">Verify</button>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="OTP" class="col-sm-2 col-form-label">OTP</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="OTP" placeholder="Enter OTP">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="role" class="col-sm-2 col-form-label">Role</label>
+                        <div class="col-sm-10">
+                            <select class="form-select" id="role">
+                                <option selected>Select role</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Add User</button>
+                        </div>
+                    </div>
+                </form>
+            </section> -->
+
+            <!-- Editing User Account -->
+            <!-- Editing User Account -->
+            <section class="border shadow-lg p-3 mb-5 bg-body rounded" id="editUsername">
+                <h2 class="mb-3">Edit User Account</h2>
+                <div class="row">
+                    <!-- User Information -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="editUsername" class="form-label">Username</label>
+                            <input type="text" id="editUsername" class="form-control" placeholder="Enter new username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmail" class="form-label">Email Address</label>
+                            <input type="email" id="editEmail" class="form-control"
+                                placeholder="Enter new email address">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPassword" class="form-label">New Password</label>
+                            <input type="password" id="editPassword" class="form-control"
+                                placeholder="Enter new password">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="editActiveStatus">
+                            <label class="form-check-label" for="editActiveStatus">Account Active</label>
+                        </div>
+                    </div>
+                    <!-- Permissions -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Assign Role</label>
+                            <select class="form-select">
+                                <option selected>Select role</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Subscription Plan</label>
+                            <select class="form-select">
+                                <option selected>Select plan</option>
+                                <option value="basic">Basic</option>
+                                <option value="premium">Premium</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-danger">Reset Password</button>
+                        <button type="button" class="btn btn-warning">Check Activity</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Removing User Account -->
+            <section class="border shadow-lg p-3 mb-5 bg-body rounded" id="removeuser">
+                <h2 class="mb-3"> Account Status</h2>
+                <div class="mb-3">
+                    <label for="userAccount" class="form-label">User Account</label>
+                    <input type="text" class="form-control" id="userAccount" placeholder="Enter user account">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="getUserInfo()">Get User Info</button>
+
+                <section id="removeUserSection" style="display: none;">
+                    <h2 class="mb-3">Remove User Account</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3 form-radio">
+                                <input type="radio" class="form-radio-input" id="blockUser">
+                                <label class="form-radio-label" for="blockUser">Block User</label>
+                            </div>
+                            <div class="mb-3 form-radio">
+                                <input type="radio" class="form-radio-input" id="deactivateUser">
+                                <label class="form-radio-label" for="deactivateUser">Deactivate Account</label>
+                            </div>
+                            <div class="mb-3 form-radio">
+                                <input type="radio" class="form-radio-input" id="removeUser">
+                                <label class="form-radio-label" for="removeUser">Remove Account</label>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Remove User</button>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Additional options can be added here -->
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+    <!-- main Section -->
+
+    <!-- MDB -->
+    <div>
+        <script type="text/javascript" src="js/mdb.umd.min.js"></script>
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- Custom scripts -->
+        <script type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@twilio/sdk"></script>
+    </div>
+
+    <!-- OTP -->
+
+    <script>
+        // Function to send OTP
+        function sendOTP() {
+            // Get the mobile number from the form
+            const mobileNumber = $('#mobileNumber').val();
+
+            // Initialize Twilio client
+            const twilioClient = require('twilio');
+            const accountSid = 'your_account_sid';
+            const authToken = 'your_auth_token';
+            const client = twilioClient(accountSid, authToken);
+
+            // Generate OTP
+            const otp = Math.floor(100000 + Math.random() * 900000);
+
+            // Send OTP via Twilio
+            client.messages.create({
+                body: `Your OTP is: ${otp}`,
+                from: 'your_twilio_phone_number',
+                to: mobileNumber
+            }).then(message => {
+                // Display success message
+                Swal.fire({
+                    icon: 'success',
+                    title: 'OTP sent successfully!',
+                    text: 'Please check your mobile for the OTP.'
+                });
+            }).catch(error => {
+                // Display error message
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Failed to send OTP. Please try again later.'
+                });
+                console.error('Error sending OTP:', error);
+            });
+        }
+        //OTP 
+        //Remove Account
+        function getUserInfo() {
+            var userAccount = document.getElementById('userAccount').value;
+            // Here you would make an API call or fetch data from your backend
+            // Replace this with your actual logic to retrieve user information
+            // For demonstration purposes, I'm just displaying the removal section
+            document.getElementById('removeUserSection').style.display = 'block';
+        }
+        //Remove Account
+    </script>
+
+
+
+</body>
+
+</html>
